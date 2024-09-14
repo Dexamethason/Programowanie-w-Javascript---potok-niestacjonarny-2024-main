@@ -1,4 +1,3 @@
-// Pobranie elementów z HTML: canvas i kontekst rysowania 2D
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -39,7 +38,7 @@ class Ball {
     if (this.x + this.dx > canvas.width - this.radius || this.x + this.dx < this.radius) {
       this.dx = -this.dx; // Zmiana kierunku na przeciwny
     }
-    // Odbicie prion
+    // Odbicie pion
     if (this.y + this.dy > canvas.height - this.radius || this.y + this.dy < this.radius) {
       this.dy = -this.dy; // Zmiana kierunku na przeciwny
     }
@@ -63,8 +62,8 @@ function drawBalls() {
   
   // Iteracja przez ilość kulek
   for (let i = 0; i < balls.length; i++) {
-    balls[i].draw(); // Rysowanie kulki
-    balls[i].move(); // Przesunięcie kulki
+    balls[i].draw(); 
+    balls[i].move(); 
 
     // Sprawdza bliskosc kulek i rysuje linie
     for (let j = i + 1; j < balls.length; j++) {
@@ -82,48 +81,43 @@ function drawBalls() {
 // Funkcja tworząca kulki
 function createBalls() {
   const ballCount = parseInt(ballCountInput.value); // Pobierz liczbę kulek
-  balls = []; // Wyczyszczenie tablicy kulek
+  balls = []; 
   for (let i = 0; i < ballCount; i++) {
-    const radius = 5; // Stały promień kulek
-    const x = Math.random() * (canvas.width - 2 * radius) + radius; // Losowa pozycja X
-    const y = Math.random() * (canvas.height - 2 * radius) + radius; // Losowa pozycja Y
-    const dx = (Math.random() - 0.5) * 4; // Losowa prędkość w osi X
-    const dy = (Math.random() - 0.5) * 4; // Losowa prędkość w osi Y
-    balls.push(new Ball(x, y, radius, dx, dy)); // Dodaj kulkę do tablicy
+    const radius = 5; 
+    const x = Math.random() * (canvas.width - 2 * radius) + radius;
+    const y = Math.random() * (canvas.height - 2 * radius) + radius; 
+    const dx = (Math.random() - 0.5) * 4; 
+    const dy = (Math.random() - 0.5) * 4; 
+    balls.push(new Ball(x, y, radius, dx, dy)); 
   }
 }
 
-// Funkcja uruchamiająca animację
 function startAnimation() {
-  if (!isRunning) { // Sprawdzenie, czy animacja nie działa
-    isRunning = true; // Ustawienie flagi animacji
-    animationFrame = requestAnimationFrame(animate); // Uruchomienie animacji
+  if (!isRunning) { 
+    isRunning = true; 
+    animationFrame = requestAnimationFrame(animate); 
   }
 }
 
-// Funkcja zatrzymująca animację
 function stopAnimation() {
-  cancelAnimationFrame(animationFrame); // Zatrzymaj animację
-  isRunning = false; // Reset flagi animacji
+  cancelAnimationFrame(animationFrame); 
+  isRunning = false; 
 }
 
-// Funkcja odpowiadająca za kolejne klatki animacji
 function animate() {
-  drawBalls(); // Rysowanie kulek
-  animationFrame = requestAnimationFrame(animate); // Kontynuowanie animacji
+  drawBalls(); 
+  animationFrame = requestAnimationFrame(animate);
 }
 
-// Dodanie obsługi zdarzeń na przyciskach
 startButton.addEventListener('click', () => {
-  stopAnimation(); // Zatrzymaj poprzednią animację
-  createBalls(); // Utwórz nowe kulki
-  startAnimation(); // Uruchom animację
+  stopAnimation();
+  createBalls(); 
+  startAnimation();
 });
 
 resetButton.addEventListener('click', () => {
-  stopAnimation(); // Zatrzymaj animację
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Wyczyść ekran
+  stopAnimation();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
-// Utworzenie kulek po załadowaniu strony
 createBalls();
