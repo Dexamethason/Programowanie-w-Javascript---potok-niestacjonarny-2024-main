@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NotePocket</h1>
+        <input type="text" id="searchInput" placeholder="Wyszukaj notatki...">
+        <div id="notesContainer"></div>
+        <div id="addNoteButton" class="note add-note">➕</div>
+    </div>
+    
+    <!-- Pop-up z formularzem dodawania/edycji notatki -->
+    <div id="notePopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <form id="noteForm">
+                <input type="hidden" id="noteId">
+                <input type="text" id="noteTitle" placeholder="Tytuł notatki" required>
+                <textarea id="noteContent" placeholder="Treść notatki" required></textarea>
+                <input type="color" id="noteColor" value="#ffffff" required>
+                 
+                <label>
+                    <input type="checkbox" id="notePin"> Przypnij notatkę
+                </label>
+                <button type="submit">Zapisz Notatkę</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

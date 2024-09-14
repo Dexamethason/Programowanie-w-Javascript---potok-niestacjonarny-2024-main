@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fdfdeb;
+}
+
+.slider.slide3 {
+  width: 800px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 32px;
+}
+
+.box {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.box img {
+  width: 800px;
+  height: 600px;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav button:hover
+{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav .prev
+{
+  border-radius: 0px 8px 8px 0px;
+}
+.nav .next
+{
+  border-radius: 8px 0px 0px 8px;
+}
+
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+
+.dots .dot {
+  height: 20px;
+  width: 20px;
+  margin: 0 5px 0 5px;
+  background-color: #c0c0c0;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dots .dot.active {
+  background-color: #464646;
+}
+
+
+.nav .pause {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.slider:hover .nav .pause {
+  opacity: 1;
+}

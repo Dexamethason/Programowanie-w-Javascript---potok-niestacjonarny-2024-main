@@ -1,0 +1,141 @@
+/* Styl by chat gpt + ręczne poprawki bo chyba można :D */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+#notesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.note {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.3% - 60px);
+    position: relative;
+}
+
+.note h2 {
+    margin: 0 0 10px;
+}
+
+.note p {
+    margin: 0 0 10px;
+}
+
+.note .note-date {
+    font-size: 12px;
+    color: #666;
+}
+
+.add-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    background-color: #ddd;
+    cursor: pointer;
+    min-width: 20%;
+    margin: 25px auto 10px auto;
+}
+
+.add-note:hover{
+    background-color: #ccc;
+}
+
+/* Stylizacja przycisków edycji i usuwania */
+.edit-btn, .delete-btn {
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    border: none;
+    background: none;
+}
+
+.edit-btn {
+    right: 40px;
+    color: blue;
+}
+
+.delete-btn {
+    right: 10px;
+    color: red;
+}
+
+/* Stylizacja pop-upu */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea, form button {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#searchInput {
+    width: 50%;
+    padding: 10px;
+    margin: 20px 25% 40px 25%;
+    border: 2px solid #ccc; 
+    border-radius: 5px;
+    font-size: 16px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease; 
+}
+#searchInput:focus {
+    border-color: #007bff; 
+    outline: none; 
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2); 
+}

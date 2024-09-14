@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drumkit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="channel">
+            <input type="checkbox" id="active1" checked>
+            <button id="record1" class="record-button">Nagrywaj Kanał 1</button>
+            <button id="play1" class="play-button" disabled>Odtwórz Kanał 1</button>
+            <button id="clear1" class="clear-button" disabled>Wyczyść Kanał 1</button>
+        </div>
+        <div class="channel">
+            <input type="checkbox" id="active2" checked>
+            <button id="record2" class="record-button">Nagrywaj Kanał 2</button>
+            <button id="play2" class="play-button" disabled>Odtwórz Kanał 2</button>
+            <button id="clear2" class="clear-button" disabled>Wyczyść Kanał 2</button>
+        </div>
+        <div class="channel">
+            <input type="checkbox" id="active3" checked>
+            <button id="record3" class="record-button">Nagrywaj Kanał 3</button>
+            <button id="play3" class="play-button" disabled>Odtwórz Kanał 3</button>
+            <button id="clear3" class="clear-button" disabled>Wyczyść Kanał 3</button>
+        </div>
+        <div class="channel">
+            <input type="checkbox" id="active4" checked>
+            <button id="record4" class="record-button">Nagrywaj Kanał 4</button>
+            <button id="play4" class="play-button" disabled>Odtwórz Kanał 4</button>
+            <button id="clear4" class="clear-button" disabled>Wyczyść Kanał 4</button>
+        </div>
+        <div class="controls">
+            <button id="playAll" class="play-all-button">Odtwórz Wszystkie</button>
+            <button id="stopAll" class="stop-all-button">Zatrzymaj Wszystkie</button>
+            <label>
+                <input type="checkbox" id="loopPlayback"> Zapętlanie
+            </label>
+        </div>
+        <audio src="./sounds/clap.wav" controls data-key="a" data-volume="40" id="s1"></audio>
+        <audio src="./sounds/kick.wav" controls data-key="s" id="s2"></audio>
+        <audio src="./sounds/hihat.wav" controls data-key="d" id="s3"></audio>
+    </div>
+    
+</div>
+
+    
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Slider - Jakub Rogula 14347</title>
+    <style>
+      .slider {
+        width: 900px;
+        height: 600px;
+        background: lightblue;
+      }
+      .box {
+        width: 90px;
+        height: 90px;
+        background: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="slider slide3">
+        <div class="box">
+          <img src="https://picsum.photos/id/11/800/600" alt="" />
+          <img src="https://picsum.photos/id/26/800/600" alt="" />
+          <img src="https://picsum.photos/id/44/800/600" alt="" />
+          <img src="https://picsum.photos/id/57/800/600" alt="" />
+          <img src="https://picsum.photos/id/91/800/600" alt="" />
+          <img src="https://picsum.photos/id/151/800/600" alt="" />
+        </div>
+        <div class="nav">
+          <button class="prev">Prev</button>
+          <button class="pause">Pause</button>
+          <button class="next">Next</button>
+        </div>
+        <div class="dots">
+          <div class="dot" data-slide="0"></div>
+          <div class="dot" data-slide="1"></div>
+          <div class="dot" data-slide="2"></div>
+          <div class="dot" data-slide="3"></div>
+          <div class="dot" data-slide="4"></div>
+          <div class="dot" data-slide="5"></div>
+        </div>
+      </div>
+    </main>
+    <script src="main.js" type="text/javascript"></script>
+  </body>
+</html>
